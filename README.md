@@ -1,8 +1,6 @@
 # react-native-image-slider-box
 
-[![npm](https://img.shields.io/npm/v/react-native-image-slider-box.svg)](https://www.npmjs.com/package/react-native-image-slider-box)
-
-This library use `react-native-snap-carousel` and make an easier way to create an image slider box with full customization ability.
+This library use `react-native-snap-carousel` and make easier way to create image slider box with full customization ability.
 
 ## Notice:
 
@@ -25,15 +23,19 @@ We don't edit or modify original library, we just use it with some additional st
 
     > npm i react-native-image-slider-box
 
+3. (Optional) : if you want to use third-party image library such as FastImage
+    > npm i react-native-fast-image;
+
  Well-done.
 
 ## Usage :
 
 ### list of available props for customization SliderBox:
-
+ 
 
 |Props  |Value Type  |Description  |
 |---------|---------|---------|
+|`ImageComponent`|Image component, default as `Image`|default value is React-native Image, if you use third-party library like FastImage use this property
 |images     | Array of image path(or url) as string        |Set array of images path- these paths can contain http url link or local images path         |
 |onCurrentImagePressed     |handler function callback         | callback for get pressed image index (index start from 0)        |
 |sliderBoxHeight     |int value         |default value = 200, you can change height of image slider box         |
@@ -43,6 +45,8 @@ We don't edit or modify original library, we just use it with some additional st
 |dotStyle     |style object         |default style is : {width: 10,height: 10,borderRadius: 5,marginHorizontal: 0,padding: 0,margin: 0,} change style of paging dots if you want         |
 |paginationBoxVerticalPadding     |int value         |default = 10 ; change  the height of paging dots from bottom of Slider-Box         |
 |circleLoop     |boolean - attribute         |if set, when user swiped to last image circularly return to first image again.         |
+|paginationBoxStyle|object,default valuse use lib style|customize pagination box
+|dotStyle|object,default use lib style|customize dot styles
 
 ### 1- add below import in your code :
 
@@ -192,6 +196,43 @@ render() {
     inactiveDotColor="#90A4AE"
     paginationBoxVerticalPadding={20}
     circleLoop
+/>
+```
+
+<hr/>
+
+### Example 8 : use Custom Image Component and customize pagination and dotStyles:
+
+```js
+<SliderBox
+  ImageComponent={FastImage}
+  images={this.state.images}
+  sliderBoxHeight={200}
+  onCurrentImagePressed={index =>
+    console.warn(`image ${index} pressed`)
+  }
+  dotColor="#FFEE58"
+  inactiveDotColor="#90A4AE"
+  paginationBoxVerticalPadding={20}
+  paginationBoxStyle={{
+    position: 'absolute',
+    bottom: 0,
+    padding: 0,
+    alignItems: 'center',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    paddingVertical: 10
+  }}
+  dotStyle={{
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    marginHorizontal: 0,
+    padding: 0,
+    margin: 0,
+    backgroundColor: 'rgba(128, 128, 128, 0.92)'
+  }}
+  circleLoop
 />
 ```
 
