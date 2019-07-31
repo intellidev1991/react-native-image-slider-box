@@ -24,40 +24,5 @@
   },
   "jest": {
     "preset": "react-native"
-  },
-  "main": "index.js",
-  "description": "A simple and fully customization React Native component that implements a ImageSlider UI.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/intellidev1991/react-native-image-slider-box.git"
-  },
-  "keywords": [
-    "react-native-image-slider-box",
-    "react-native-image-slider",
-    "react-native",
-    "react-native-slider",
-    "ReactNative",
-    "react-component",
-    "react-native-component",
-    "react",
-    "react native",
-    "mobile",
-    "ios",
-    "android",
-    "ui",
-    "slider",
-    "image slider",
-    "image paging slider"
-  ],
-  "author": "Hamed Taheri",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/intellidev1991/react-native-image-slider-box/issues"
-  },
-  "homepage": "https://github.com/intellidev1991/react-native-image-slider-box#readme",
-  "files":[
-  "README.md",
-  "dist",
-  "imgs"
-  ]
+  }
 }
