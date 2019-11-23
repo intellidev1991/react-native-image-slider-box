@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   View,
   Image,
-  TouchableWithoutFeedback,
+  TouchableHighlight,
   Dimensions,
   StyleSheet
 } from 'react-native';
@@ -51,7 +51,7 @@ export class SliderBox extends Component {
   _renderItem({ item, index }) {
     const { ImageComponent } = this.props;
     return (
-      <TouchableWithoutFeedback
+      <TouchableHighlight
         key={index}
         onPress={() => this.onCurrentImagePressedHandler(index)}
       >
@@ -59,7 +59,7 @@ export class SliderBox extends Component {
           style={{ width: null, height: this.props.sliderBoxHeight || 200 }}
           source={{ uri: item }}
         />
-      </TouchableWithoutFeedback>
+      </TouchableHighlight>
     );
   }
   get pagination() {
