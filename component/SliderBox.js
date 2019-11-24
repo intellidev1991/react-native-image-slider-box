@@ -100,6 +100,7 @@ export class SliderBox extends Component {
           sliderWidth={this.props.parentWidth || width}
           itemWidth={this.props.parentWidth || width}
           loop={this.props.circleLoop || false}
+          autoplay={this.props.autoplay || false}
         />
         {this.props.images.length > 1 && this.pagination}
       </View>
