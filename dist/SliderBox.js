@@ -57,7 +57,10 @@ export class SliderBox extends Component {
       >
         <ImageComponent
           style={{ width: null, height: this.props.sliderBoxHeight || 200 }}
-          source={{ uri: item }}
+          // source={{ uri: item }}
+          source={typeof item === 'string' ? { uri: item } : item}
+          resizeMethod={this.props.resizeMethod || 'resize'} 
+          resizeMode={this.props.resizeMode || 'cover'}
         />
       </TouchableWithoutFeedback>
     );
