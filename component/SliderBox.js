@@ -101,6 +101,7 @@ export class SliderBox extends Component {
           itemWidth={this.props.parentWidth || width}
           loop={this.props.circleLoop || false}
           autoplay={this.props.autoplay || false}
+          loopClonesPerSide={this.props.loopClonesPerSide || 5}
         />
         {this.props.images.length > 1 && this.pagination}
       </View>
