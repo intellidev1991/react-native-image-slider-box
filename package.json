@@ -1,28 +1,46 @@
 {
   "name": "react-native-image-slider-box",
-  "version": "1.0.4",
+  "version": "1.0.5",
+  "description": "A simple and fully customization React Native component that implements a ImageSlider UI.",
+  "main": "./lib/src/SliderBox.js",
   "scripts": {
-    "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint ."
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "react": "16.8.6",
-    "react-native": "0.60.4",
-    "react-native-fast-image": "^7.0.2",
-    "react-native-snap-carousel": "^3.8.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intellidev1991/react-native-image-slider-box.git"
   },
+  "keywords": [
+    "react-native-image-slider-box",
+    "react-native-image-slider",
+    "react-native",
+    "react-native-slider",
+    "ReactNative",
+    "react-component",
+    "react-native-component",
+    "react",
+    "react native",
+    "mobile",
+    "ios",
+    "android",
+    "ui",
+    "slider",
+    "image slider",
+    "image paging slider"
+  ],
+  "author": "Hamed Taheri",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/intellidev1991/react-native-image-slider-box/issues"
+  },
+  "homepage": "https://github.com/intellidev1991/react-native-image-slider-box#readme",
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/runtime": "^7.5.5",
-    "@react-native-community/eslint-config": "^0.0.5",
-    "babel-jest": "^24.8.0",
-    "eslint": "^6.1.0",
-    "jest": "^24.8.0",
-    "metro-react-native-babel-preset": "^0.55.0",
-    "react-test-renderer": "16.8.6"
+    "metro-react-native-babel-preset": "*"
   },
-  "jest": {
-    "preset": "react-native"
+  "Dependencies": {
+    "react-native-snap-carousel": "*"
+  },
+  "peerDependencies": {
+    "react-native-snap-carousel": "*"
   }
 }
