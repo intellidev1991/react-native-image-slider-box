@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, SafeAreaView, View } from "react-native";
 import { SliderBox } from "./lib/src/SliderBox";
 import FastImage from "react-native-fast-image";
 
@@ -8,10 +8,11 @@ export default class App extends Component {
     super(props);
     this.state = {
       images: [
-        "https://source.unsplash.com/1024x768/?nature",
-        "https://source.unsplash.com/1024x768/?water",
-        "https://source.unsplash.com/1024x768/?girl",
-        "https://source.unsplash.com/1024x768/?tree"
+        "https://images.unsplash.com/photo-1496595351388-d74ec2c9c9cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1364&q=80",
+        "https://images.unsplash.com/photo-1500731753043-cbb4269ca2ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1385&q=80",
+        "https://images.unsplash.com/photo-1522262139463-236991a708cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1406&q=80",
+        "https://images.unsplash.com/photo-1446059004666-8148312ba98b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "https://images.unsplash.com/photo-1540544660406-6a69dacb2804?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1431&q=80"
       ]
     };
   }
@@ -25,61 +26,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <View style={styles.container} onLayout={this.onLayout}>
-        {/* <SliderBox images={this.state.images} /> */}
-
-        {/* <SliderBox
-          images={this.state.images}
-          onCurrentImagePressed={index =>
-            console.warn(`image ${index} pressed`)
-          }
-        /> */}
-
-        {/* <SliderBox
-          images={this.state.images}
-          sliderBoxHeight={400}
-          onCurrentImagePressed={index =>
-            console.warn(`image ${index} pressed`)
-          }
-        /> */}
-
-        {/* <SliderBox
-          images={this.state.images}
-          sliderBoxHeight={200}
-          onCurrentImagePressed={index =>
-            console.warn(`image ${index} pressed`)
-          }
-          parentWidth={this.state.width}
-        /> */}
-
-        {/* <SliderBox
-          images={this.state.images}
-          sliderBoxHeight={200}
-          onCurrentImagePressed={index =>
-            console.warn(`image ${index} pressed`)
-          }
-          dotColor="#FFEE58"
-          inactiveDotColor="#90A4AE"
-        /> */}
-
-        {/* <SliderBox
-          images={this.state.images}
-          sliderBoxHeight={200}
-          onCurrentImagePressed={index =>
-            console.warn(`image ${index} pressed`)
-          }
-          dotColor="#FFEE58"
-          inactiveDotColor="#90A4AE"
-          dotStyle={{
-            width: 15,
-            height: 15,
-            borderRadius: 15,
-            marginHorizontal: 10,
-            padding: 0,
-            margin: 0
-          }}
-        /> */}
-
+      <SafeAreaView style={styles.container} onLayout={this.onLayout}>
         <SliderBox
           ImageComponent={FastImage}
           images={this.state.images}
@@ -89,6 +36,7 @@ export default class App extends Component {
           }
           dotColor="#FFEE58"
           inactiveDotColor="#90A4AE"
+          autoPlay
           paginationBoxVerticalPadding={20}
           paginationBoxStyle={{
             position: "absolute",
@@ -110,7 +58,7 @@ export default class App extends Component {
           }}
           circleLoop
         />
-      </View>
+      </SafeAreaView>
     );
   }
 }
