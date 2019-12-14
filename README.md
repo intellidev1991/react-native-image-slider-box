@@ -5,14 +5,6 @@
 
 > `Announce`: New version published.
 
-This library use `react-native-snap-carousel` and make easier way to create image slider box with full customization ability.
-
-## Notice:
-
-See original Library [https://github.com/archriss/react-native-snap-carousel](https://github.com/archriss/react-native-snap-carousel)
-
-We don't edit or modify original library, we just use it with some additional style.
-
 ---
 
 ![SliderBox](assets/pic1.jpg)
@@ -281,11 +273,13 @@ Note: Please Use `example` folder to run sample. The sample used `components/Sli
 
 ### License MIT
 
-## Please subscribe and contribute me to develop this lib
+## Please subscribe and contribute with me to develop this lib
 
 ---
 
 ## Notice:
+
+This library use `react-native-snap-carousel` and make easier way to create image slider box with full customization ability.
 
 See original Library [https://github.com/archriss/react-native-snap-carousel](https://github.com/archriss/react-native-snap-carousel)
 
