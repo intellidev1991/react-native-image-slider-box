@@ -271,6 +271,10 @@ const styles = StyleSheet.create({
 });
 ```
 
+# Contribute
+
+Note: Please Use `example` folder to run sample. The sample used `components/SliderBox.js` file to run. Please after editing this file copy changes to root `dist/` folder too. The `npm` used `dist/` folder. Thanks guys.
+
 ### License MIT
 
 ## Please subscribe and contribute me to develop this lib
