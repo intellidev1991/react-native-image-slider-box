@@ -5248,7 +5248,14 @@ react-native-fast-image@^7.0.2:
   resolved "https://registry.yarnpkg.com/react-native-fast-image/-/react-native-fast-image-7.0.2.tgz#e06b21f42f4a9786eaa86f3db35d919070fb8403"
   integrity sha512-MfuzJbC0RjYobR2gFCdqe1I7jvNOCfDkjQ7VGOHXniqjohhULMkcWNBE9Umovi9Dx93lJ6t5utcE2wf/09zvlg==
 
-react-native-snap-carousel@^3.8.4:
+react-native-image-slider-box@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/react-native-image-slider-box/-/react-native-image-slider-box-1.0.8.tgz#0a883619fa89c502d24690343f124e45e0ff6fe2"
+  integrity sha512-m6421zNtdKG1YMYoSrMCNK9ZI9LH8KJKzQwP6h1mopSbKgz+wbKLp8ZREcMJvVbaTisUZB0bC5Yj2VeuZ0Wqfw==
+  dependencies:
+    react-native-snap-carousel "*"
+
+react-native-snap-carousel@*:
   version "3.8.4"
   resolved "https://registry.yarnpkg.com/react-native-snap-carousel/-/react-native-snap-carousel-3.8.4.tgz#4c749c6a714d46ed82de527233850cb5da41bc62"
   integrity sha512-KMxLl75Tyf12DzeTCtV7xU0KuPZQQs/2+2iM90cgxcm3lrg4+hLXff5/61ynasBkzzJ5v4bTRq5CEy/qGUJVQw==

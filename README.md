@@ -16,16 +16,16 @@ We don't edit or modify original library, we just use it with some additional st
 
 ## Install
 
-1. First install this library : https://github.com/archriss/react-native-snap-carousel | use below npm script (`Thank you` so much to provide snap-carousel lib. please see the original lib)
-
-   > npm i react-native-snap-carousel
-
-2. Second install our library | use below npm script
+1. First, install our library | use below npm script
 
    > npm i react-native-image-slider-box
 
-3. (Optional) : if you want to use third-party image library such as FastImage
-   > npm i react-native-fast-image;
+   > yarn add react-native-image-slider-box
+
+2. (Optional) : if you want to use third-party image library such as FastImage
+   > npm i react-native-fast-image
+
+   > yarn add react-native-fast-image
 
 Well-done.
 
