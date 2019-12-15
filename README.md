@@ -9,6 +9,8 @@
 
 ![SliderBox](assets/pic1.jpg)
 
+![SliderBox](assets/gif.gif)
+
 ## Install
 
 1. First, install our library | use below npm script
