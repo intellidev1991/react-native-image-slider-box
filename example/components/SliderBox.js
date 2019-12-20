@@ -57,9 +57,7 @@ export class SliderBox extends Component {
     return (
       <TouchableHighlight
         key={index}
-        onPress={
-          !disableOnPress && (() => this.onCurrentImagePressedHandler())
-        }>
+        onPress={() => !disableOnPress && this.onCurrentImagePressedHandler()}>
         <ImageComponent
           style={{width: null, height: sliderBoxHeight || 200}}
           source={typeof item === 'string' ? {uri: item} : item}

@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {View, Image, TouchableHighlight, Dimensions} from 'react-native';
+import React, { Component } from "react";
+import { View, Image, TouchableHighlight, Dimensions } from "react-native";
 
-import Carousel, {Pagination} from 'react-native-snap-carousel'; //Thank From distributer(s) of this lib
-import styles from './SliderBox.style';
+import Carousel, { Pagination } from "react-native-snap-carousel"; //Thank From distributer(s) of this lib
+import styles from "./SliderBox.style";
 
 // -------------------Props---------------------
 // images
@@ -20,15 +20,15 @@ import styles from './SliderBox.style';
 // resizeMethod
 // resizeMode
 
-const width = Dimensions.get('window').width;
+const width = Dimensions.get("window").width;
 export class SliderBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentImage: 0,
+      currentImage: 0
     };
     this.onCurrentImagePressedHandler = this.onCurrentImagePressedHandler.bind(
-      this,
+      this
     );
     this.onSnap = this.onSnap.bind(this);
   }
@@ -40,31 +40,30 @@ export class SliderBox extends Component {
   }
 
   onSnap(index) {
-    const {currentImageEmitter} = this.props;
-    this.setState({currentImage: index}, () => {
+    const { currentImageEmitter } = this.props;
+    this.setState({ currentImage: index }, () => {
       if (currentImageEmitter) currentImageEmitter(this.state.currentImage);
     });
   }
 
-  _renderItem({item, index}) {
+  _renderItem({ item, index }) {
     const {
       ImageComponent,
       sliderBoxHeight,
       disableOnPress,
       resizeMethod,
-      resizeMode,
+      resizeMode
     } = this.props;
     return (
       <TouchableHighlight
         key={index}
-        onPress={
-          !disableOnPress && (() => this.onCurrentImagePressedHandler())
-        }>
+        onPress={() => !disableOnPress && this.onCurrentImagePressedHandler()}
+      >
         <ImageComponent
-          style={{width: null, height: sliderBoxHeight || 200}}
-          source={typeof item === 'string' ? {uri: item} : item}
-          resizeMethod={resizeMethod || 'resize'}
-          resizeMode={resizeMode || 'cover'}
+          style={{ width: null, height: sliderBoxHeight || 200 }}
+          source={typeof item === "string" ? { uri: item } : item}
+          resizeMethod={resizeMethod || "resize"}
+          resizeMode={resizeMode || "cover"}
           {...this.props}
         />
       </TouchableHighlight>
@@ -72,14 +71,14 @@ export class SliderBox extends Component {
   }
 
   get pagination() {
-    const {currentImage} = this.state;
+    const { currentImage } = this.state;
     const {
       images,
       dotStyle,
       dotColor,
       inactiveDotColor,
       paginationBoxStyle,
-      paginationBoxVerticalPadding,
+      paginationBoxVerticalPadding
     } = this.props;
     return (
       <Pagination
@@ -96,9 +95,9 @@ export class SliderBox extends Component {
         containerStyle={[
           styles.paginationBoxStyle,
           paginationBoxVerticalPadding
-            ? {paddingVertical: paginationBoxVerticalPadding}
+            ? { paddingVertical: paginationBoxVerticalPadding }
             : {},
-          paginationBoxStyle ? paginationBoxStyle : {},
+          paginationBoxStyle ? paginationBoxStyle : {}
         ]}
         {...this.props}
       />
@@ -111,12 +110,12 @@ export class SliderBox extends Component {
       circleLoop,
       autoplay,
       parentWidth,
-      loopClonesPerSide,
+      loopClonesPerSide
     } = this.props;
     return (
-      <View style={{borderRadius: 2}}>
+      <View style={{ borderRadius: 2 }}>
         <Carousel
-          layout={'default'}
+          layout={"default"}
           borderTopLeftRadius={2}
           borderTopRightRadius={2}
           data={images}
@@ -138,10 +137,10 @@ export class SliderBox extends Component {
 }
 
 const colors = {
-  dotColors: '#BDBDBD',
-  white: '#FFFFFF',
+  dotColors: "#BDBDBD",
+  white: "#FFFFFF"
 };
 
 SliderBox.defaultProps = {
-  ImageComponent: Image,
+  ImageComponent: Image
 };
