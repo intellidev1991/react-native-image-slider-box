@@ -62,6 +62,8 @@ export default class App extends Component {
           }}
           autoplay
           circleLoop
+          ImageComponentStyle={{borderRadius: 15, width: '97%', marginTop: 5}}
+          imageLoadingColor="#2196F3"
         />
       </SafeAreaView>
     );

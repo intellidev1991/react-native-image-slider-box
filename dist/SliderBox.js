@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { View, Image, TouchableHighlight, Dimensions } from "react-native";
+import {
+  View,
+  Image,
+  ActivityIndicator,
+  TouchableHighlight,
+  Dimensions
+} from "react-native";
 
 import Carousel, { Pagination } from "react-native-snap-carousel"; //Thank From distributer(s) of this lib
 import styles from "./SliderBox.style";
@@ -19,20 +25,26 @@ import styles from "./SliderBox.style";
 // paginationBoxStyle
 // resizeMethod
 // resizeMode
+// ImageComponentStyle,
+// imageLoadingColor = "#E91E63"
 
 const width = Dimensions.get("window").width;
+
 export class SliderBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentImage: 0
+      currentImage: 0,
+      loading: []
     };
     this.onCurrentImagePressedHandler = this.onCurrentImagePressedHandler.bind(
       this
     );
     this.onSnap = this.onSnap.bind(this);
   }
-
+  componentDidMount() {
+    let a = [...Array(this.props.images.length).keys()].map(i => false);
+  }
   onCurrentImagePressedHandler() {
     if (this.props.onCurrentImagePressed) {
       this.props.onCurrentImagePressed(this.state.currentImage);
@@ -49,24 +61,57 @@ export class SliderBox extends Component {
   _renderItem({ item, index }) {
     const {
       ImageComponent,
+      ImageComponentStyle = {},
       sliderBoxHeight,
       disableOnPress,
       resizeMethod,
-      resizeMode
+      resizeMode,
+      imageLoadingColor = "#E91E63"
     } = this.props;
     return (
-      <TouchableHighlight
-        key={index}
-        onPress={() => !disableOnPress && this.onCurrentImagePressedHandler()}
+      <View
+        style={{
+          position: "relative",
+          justifyContent: "center"
+        }}
       >
-        <ImageComponent
-          style={{ width: null, height: sliderBoxHeight || 200 }}
-          source={typeof item === "string" ? { uri: item } : item}
-          resizeMethod={resizeMethod || "resize"}
-          resizeMode={resizeMode || "cover"}
-          {...this.props}
-        />
-      </TouchableHighlight>
+        <TouchableHighlight
+          key={index}
+          onPress={() => !disableOnPress && this.onCurrentImagePressedHandler()}
+        >
+          <ImageComponent
+            style={[
+              {
+                width: "100%",
+                height: sliderBoxHeight || 200,
+                alignSelf: "center"
+              },
+              ImageComponentStyle
+            ]}
+            source={typeof item === "string" ? { uri: item } : item}
+            resizeMethod={resizeMethod || "resize"}
+            resizeMode={resizeMode || "cover"}
+            onLoad={() => {}}
+            onLoadStart={() => {}}
+            onLoadEnd={() => {
+              let t = this.state.loading;
+              t[index] = true;
+              this.setState({ loading: t });
+            }}
+            {...this.props}
+          />
+        </TouchableHighlight>
+        {!this.state.loading[index] && (
+          <ActivityIndicator
+            size="large"
+            color={imageLoadingColor}
+            style={{
+              position: "absolute",
+              alignSelf: "center"
+            }}
+          />
+        )}
+      </View>
     );
   }
 
@@ -113,11 +158,9 @@ export class SliderBox extends Component {
       loopClonesPerSide
     } = this.props;
     return (
-      <View style={{ borderRadius: 2 }}>
+      <View>
         <Carousel
           layout={"default"}
-          borderTopLeftRadius={2}
-          borderTopRightRadius={2}
           data={images}
           ref={c => (this._ref = c)}
           loop={circleLoop || false}

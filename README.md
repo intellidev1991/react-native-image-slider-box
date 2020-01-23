@@ -49,6 +49,8 @@ Well-done.
 | dotStyle                     | object,default use lib style          | customize dot styles                                                                                                                                    |
 | resizeMethod                 | string                                | default is `resize`                                                                                                                                     |
 | resizeMode                   | string                                | default is `cover`                                                                                                                                      |
+| ImageComponentStyle          | object                                | {} style object for ImageComponent   |
+| imageLoadingColor            | string                                | default is `#E91E63` , image loading indicator color       |
 
 ### 1- add below import in your code :
 
@@ -192,6 +194,8 @@ render() {
 
 ### Example 8 : use `Custom Image Component`, customize pagination, image `modes` and dotStyles:
 
+![SliderBox](assets/pic7.jpg)
+
 ```js
 <SliderBox
   ImageComponent={FastImage}
@@ -223,6 +227,8 @@ render() {
     margin: 0,
     backgroundColor: "rgba(128, 128, 128, 0.92)"
   }}
+  ImageComponentStyle={{borderRadius: 15, width: '97%', marginTop: 5}}
+  imageLoadingColor="#2196F3"
 />
 ```
 
