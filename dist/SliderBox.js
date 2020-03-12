@@ -78,6 +78,7 @@ export class SliderBox extends Component {
         <TouchableHighlight
           key={index}
           onPress={() => !disableOnPress && this.onCurrentImagePressedHandler()}
+          underlayColor={'transparent'}
         >
           <ImageComponent
             style={[
