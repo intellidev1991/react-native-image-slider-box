@@ -160,7 +160,7 @@ export class SliderBox extends Component {
     return (
       <View style={[styles.pageNumberStyle, stylePageNumber]}>
         <Text style={[styles.pageTextStyle, styleNumberText]}>
-          {currentImage} {separatorPage ? separatorPage : '/'} {totalImages}
+          {currentImage + 1} {separatorPage ? separatorPage : '/'} {totalImages}
         </Text>
       </View>
     );
