@@ -43,7 +43,7 @@ export class SliderBox extends Component {
     this.onSnap = this.onSnap.bind(this);
   }
   componentDidMount() {
-    let a = [...Array(this.props.images.length).keys()].map((i) => false);
+    let a = [...Array(this.props.images.length).keys()].map(i => false);
   }
   onCurrentImagePressedHandler() {
     if (this.props.onCurrentImagePressed) {
@@ -79,7 +79,7 @@ export class SliderBox extends Component {
           key={index}
           disabled={disableOnPress}
           onPress={this.onCurrentImagePressedHandler}
-          underlayColor={"transparent"}
+          underlayColor={'transparent'}
         >
           <ImageComponent
             style={[
@@ -88,7 +88,7 @@ export class SliderBox extends Component {
                 height: sliderBoxHeight || 200,
                 alignSelf: "center"
               },
-              ImageComponentStyle,
+              ImageComponentStyle
             ]}
             source={typeof item === "string" ? { uri: item } : item}
             resizeMethod={resizeMethod || "resize"}
@@ -144,7 +144,7 @@ export class SliderBox extends Component {
           paginationBoxVerticalPadding
             ? { paddingVertical: paginationBoxVerticalPadding }
             : {},
-          paginationBoxStyle ? paginationBoxStyle : {},
+          paginationBoxStyle ? paginationBoxStyle : {}
         ]}
         {...this.props}
       />
@@ -179,15 +179,15 @@ export class SliderBox extends Component {
         <Carousel
           layout={"default"}
           data={images}
-          ref={(c) => (this._ref = c)}
+          ref={c => (this._ref = c)}
           loop={circleLoop || false}
           enableSnap={true}
           autoplay={autoplay || false}
           itemWidth={parentWidth || width}
           sliderWidth={parentWidth || width}
           loopClonesPerSide={loopClonesPerSide || 5}
-          renderItem={(item) => this._renderItem(item)}
-          onSnapToItem={(index) => this.onSnap(index)}
+          renderItem={item => this._renderItem(item)}
+          onSnapToItem={index => this.onSnap(index)}
           {...this.props}
         />
         {images.length > 1 && this.pagination}
