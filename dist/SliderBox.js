@@ -154,13 +154,13 @@ export class SliderBox extends Component {
 
   get pageNumber() {
     const { currentImage } = this.state;
-    const { stylePageNumber, styleNumberText, images } = this.props;
+    const { stylePageNumber, styleNumberText, images, separatorPage } = this.props;
 
     const totalImages = images ? images.length : 0;
     return (
       <View style={[styles.pageNumberStyle, stylePageNumber]}>
         <Text style={[styles.pageTextStyle, styleNumberText]}>
-          {currentImage}/{totalImages}
+          {currentImage} {separatorPage ? '/' : separatorPage} {totalImages}
         </Text>
       </View>
     );
