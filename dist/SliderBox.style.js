@@ -6,7 +6,7 @@ export default {
     alignItems: "center",
     alignSelf: "center",
     justifyContent: "center",
-    paddingVertical: 10
+    paddingVertical: 10,
   },
   dotStyle: {
     width: 10,
@@ -15,6 +15,16 @@ export default {
     marginHorizontal: 0,
     padding: 0,
     margin: 0,
-    backgroundColor: "rgba(128, 128, 128, 0.92)"
-  }
+    backgroundColor: "rgba(128, 128, 128, 0.92)",
+  },
+  pageNumberStyle: {
+    position: "absolute",
+    bottom: 10,
+    right: 10,
+    backgroundColor: "rgba(128, 128, 128, 0.92)",
+    padding: 5,
+  },
+  pageTextStyle: {
+    color: "rgba(255, 255, 255, 1)",
+  },
 };
