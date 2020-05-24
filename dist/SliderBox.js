@@ -4,7 +4,7 @@ import {
   Image,
   ActivityIndicator,
   TouchableHighlight,
-  Dimensions,
+  Dimensions
 } from "react-native";
 
 import Carousel, { Pagination } from "react-native-snap-carousel"; //Thank From distributer(s) of this lib
@@ -35,7 +35,7 @@ export class SliderBox extends Component {
     super(props);
     this.state = {
       currentImage: 0,
-      loading: [],
+      loading: []
     };
     this.onCurrentImagePressedHandler = this.onCurrentImagePressedHandler.bind(
       this
@@ -66,13 +66,13 @@ export class SliderBox extends Component {
       disableOnPress,
       resizeMethod,
       resizeMode,
-      imageLoadingColor = "#E91E63",
+      imageLoadingColor = "#E91E63"
     } = this.props;
     return (
       <View
         style={{
           position: "relative",
-          justifyContent: "center",
+          justifyContent: "center"
         }}
       >
         <TouchableHighlight
@@ -86,7 +86,7 @@ export class SliderBox extends Component {
               {
                 width: "100%",
                 height: sliderBoxHeight || 200,
-                alignSelf: "center",
+                alignSelf: "center"
               },
               ImageComponentStyle,
             ]}
@@ -109,7 +109,7 @@ export class SliderBox extends Component {
             color={imageLoadingColor}
             style={{
               position: "absolute",
-              alignSelf: "center",
+              alignSelf: "center"
             }}
           />
         )}
@@ -125,7 +125,7 @@ export class SliderBox extends Component {
       dotColor,
       inactiveDotColor,
       paginationBoxStyle,
-      paginationBoxVerticalPadding,
+      paginationBoxVerticalPadding
     } = this.props;
     return (
       <Pagination
@@ -172,7 +172,7 @@ export class SliderBox extends Component {
       autoplay,
       parentWidth,
       loopClonesPerSide,
-      pageNumber,
+      pageNumber
     } = this.props;
     return (
       <View>
@@ -199,9 +199,9 @@ export class SliderBox extends Component {
 
 const colors = {
   dotColors: "#BDBDBD",
-  white: "#FFFFFF",
+  white: "#FFFFFF"
 };
 
 SliderBox.defaultProps = {
-  ImageComponent: Image,
+  ImageComponent: Image
 };
