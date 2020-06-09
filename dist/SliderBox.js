@@ -157,11 +157,13 @@ export class SliderBox extends Component {
       circleLoop,
       autoplay,
       parentWidth,
-      loopClonesPerSide
+      loopClonesPerSide,
+      autoplayDelay
     } = this.props;
     return (
       <View>
         <Carousel
+          autoplayDelay={autoplayDelay}
           layout={"default"}
           data={images}
           ref={c => (this._ref = c)}
