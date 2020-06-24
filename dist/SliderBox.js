@@ -165,6 +165,7 @@ export class SliderBox extends Component {
         <Carousel
           autoplayDelay={autoplayDelay}
           layout={"default"}
+          useScrollView
           data={images}
           ref={c => (this._ref = c)}
           loop={circleLoop || false}
