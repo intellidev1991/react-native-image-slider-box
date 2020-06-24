@@ -79,7 +79,7 @@ export class SliderBox extends Component {
           key={index}
           disabled={disableOnPress}
           onPress={this.onCurrentImagePressedHandler}
-          underlayColor={'transparent'}
+          underlayColor={'none'}
         >
           <ImageComponent
             style={[
