@@ -27,7 +27,7 @@ import styles from "./SliderBox.style";
 // resizeMode
 // ImageComponentStyle,
 // imageLoadingColor = "#E91E63"
-// defaultStartIndex = 0
+// firstItem = 0
 
 const width = Dimensions.get("window").width;
 
@@ -35,7 +35,7 @@ export class SliderBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentImage: props.defaultStartIndex || 0,
+      currentImage: props.firstItem || 0,
       loading: []
     };
     this.onCurrentImagePressedHandler = this.onCurrentImagePressedHandler.bind(
