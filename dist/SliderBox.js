@@ -3,7 +3,7 @@ import {
   View,
   Image,
   ActivityIndicator,
-  TouchableHighlight,
+  TouchableOpacity,
   Dimensions
 } from "react-native";
 
@@ -27,6 +27,7 @@ import styles from "./SliderBox.style";
 // resizeMode
 // ImageComponentStyle,
 // imageLoadingColor = "#E91E63"
+// firstItem = 0
 
 const width = Dimensions.get("window").width;
 
@@ -34,7 +35,7 @@ export class SliderBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentImage: 0,
+      currentImage: props.firstItem || 0,
       loading: []
     };
     this.onCurrentImagePressedHandler = this.onCurrentImagePressedHandler.bind(
@@ -75,11 +76,11 @@ export class SliderBox extends Component {
           justifyContent: "center"
         }}
       >
-        <TouchableHighlight
+        <TouchableOpacity
           key={index}
           disabled={disableOnPress}
           onPress={this.onCurrentImagePressedHandler}
-          underlayColor={'transparent'}
+          activeOpacity={1}
         >
           <ImageComponent
             style={[
@@ -102,7 +103,7 @@ export class SliderBox extends Component {
             }}
             {...this.props}
           />
-        </TouchableHighlight>
+        </TouchableOpacity>
         {!this.state.loading[index] && (
           <ActivityIndicator
             size="large"

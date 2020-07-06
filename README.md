@@ -51,6 +51,7 @@ Well-done.
 | resizeMode                   | string                                | default is `cover`                                                                                                                                      |
 | ImageComponentStyle          | object                                | {} style object for ImageComponent   |
 | imageLoadingColor            | string                                | default is `#E91E63` , image loading indicator color       |
+| firstItem            | number                                | default is 0 , index of image to display when slider box loads       |
 
 ### 1- add below import in your code :
 
