@@ -50,7 +50,9 @@ Well-done.
 | resizeMethod                 | string                                | default is `resize`                                                                                                                                     |
 | resizeMode                   | string                                | default is `cover`                                                                                                                                      |
 | ImageComponentStyle          | object                                | {} style object for ImageComponent   |
-| imageLoadingColor            | string                                | default is `#E91E63` , image loading indicator color       |
+  | imageLoadingColor            | string                                | default is `#E91E63` , image loading indicator color       |
+| ImageLoader            | React component, default as `ActivityIndicator`                                | default value is React-native ActivityIndicator.
+       |
 | firstItem            | number                                | default is 0 , index of image to display when slider box loads       |
 
 ### 1- add below import in your code :
