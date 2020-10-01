@@ -86,6 +86,7 @@ export class SliderBox extends Component {
         }}>
         <TouchableOpacity
           key={index}
+          underlayColor="transparent"
           disabled={disableOnPress}
           onPress={this.onCurrentImagePressedHandler}
           activeOpacity={1}>
