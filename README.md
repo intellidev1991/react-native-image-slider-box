@@ -37,6 +37,7 @@ Well-done.
 | onCurrentImagePressed        | handler function callback             | callback for get pressed image index (index start from 0)                                                                                               |
 | currentImageEmitter          | handler function callback             | callback for get current image index (index start from 0)                                                                                               |
 | disableOnPress               | boolean               |               if present, then onCurrentImagePressed will be disabled                            |
+| activeOpacity                | number                             | default value = 0.85, Determines the opacity when touch is active. The value should be between 0 and 1                                                                                           
 | sliderBoxHeight              | int value                             | default value = 200, you can change height of image slider box                                                                                          |
 | parentWidth                  | int                                   | default = screen.width ; in advance mode, if parent is smaller, you can change it. best practice is use onLayout handler in parent component or screen. |
 | dotColor                     | color string code                     | change color of paging dot                                                                                                                              |
@@ -232,6 +233,19 @@ render() {
   }}
   ImageComponentStyle={{borderRadius: 15, width: '97%', marginTop: 5}}
   imageLoadingColor="#2196F3"
+/>
+```
+
+
+### Example 9 : SliderBox with activeOpacity:
+
+![SliderBox](assets/pic6.jpg)
+
+```js
+<SliderBox
+  images={this.state.images}
+  sliderBoxHeight={200}
+  activeOpacity={0.5}
 />
 ```
 

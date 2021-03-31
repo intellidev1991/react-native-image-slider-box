@@ -27,7 +27,7 @@ import styles from './SliderBox.style';
 // resizeMode
 // ImageComponentStyle,
 // imageLoadingColor = "#E91E63"
-
+// activeOpacity
 const width = Dimensions.get('window').width;
 
 export class SliderBox extends Component {
@@ -67,6 +67,7 @@ export class SliderBox extends Component {
       resizeMethod,
       resizeMode,
       imageLoadingColor = '#E91E63',
+      activeOpacity=0.85       // default activeOpacity is 0.85
     } = this.props;
     return (
       <View
@@ -77,7 +78,8 @@ export class SliderBox extends Component {
         <TouchableHighlight
           key={index}
           onPress={() => !disableOnPress && this.onCurrentImagePressedHandler()}
-          underlayColor={'transparent'}>
+          underlayColor={'transparent'}
+          activeOpacity={activeOpacity}>
           <ImageComponent
             style={[
               {
