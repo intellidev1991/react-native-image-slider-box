@@ -78,6 +78,7 @@ export class SliderBox extends Component {
       resizeMethod,
       resizeMode,
       imageLoadingColor = '#E91E63',
+      underlayColor = "transparent",
       activeOpacity=0.85       // default activeOpacity is 0.85
     } = this.props;
     return (
@@ -88,10 +89,10 @@ export class SliderBox extends Component {
         }}>
         <TouchableOpacity
           key={index}
-          underlayColor="transparent"
+          underlayColor={underlayColor}
           disabled={disableOnPress}
           onPress={this.onCurrentImagePressedHandler}
-          activeOpacity={activeOpacity}>
+          activeOpacity={activeOpacity}
         >
 
           <ImageComponent
