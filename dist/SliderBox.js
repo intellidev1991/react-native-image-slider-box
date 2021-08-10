@@ -3,7 +3,7 @@ import {
   View,
   Image,
   ActivityIndicator,
-  TouchableOpacity,
+  TouchableHighlight,
   Dimensions,
 } from 'react-native';
 
@@ -40,18 +40,15 @@ export class SliderBox extends Component {
       currentImage: props.firstItem || 0,
       loading: [],
     };
-    this.onCurrentImagePressedHandler = this.onCurrentImagePressedHandler.bind(
-      this,
-    );
+    this.onCurrentImagePressedHandler = this.onCurrentImagePressedHandler.bind(this);
     this.onSnap = this.onSnap.bind(this);
+    this._renderItem = this._renderItem.bind(this);
+  }
 
-    if (props.ImageLoader) {
-      this.Loader = props.ImageLoader;
-    }
-  }
   componentDidMount() {
-    let a = [...Array(this.props.images.length).keys()].map((i) => false);
+    //let a = [...Array(this.props.images.length).keys()].map((i) => false);
   }
+
   onCurrentImagePressedHandler() {
     if (this.props.onCurrentImagePressed) {
       this.props.onCurrentImagePressed(this.state.currentImage);
@@ -67,19 +64,18 @@ export class SliderBox extends Component {
     });
   }
 
-  Loader = ActivityIndicator;
-
   _renderItem({item, index}) {
     const {
       ImageComponent,
       ImageComponentStyle = {},
+      LoaderComponent,
       sliderBoxHeight,
       disableOnPress,
       resizeMethod,
       resizeMode,
       imageLoadingColor = '#E91E63',
       underlayColor = "transparent",
-      activeOpacity=0.85       // default activeOpacity is 0.85
+      activeOpacity=0.85
     } = this.props;
     return (
       <View
@@ -87,7 +83,7 @@ export class SliderBox extends Component {
           position: 'relative',
           justifyContent: 'center',
         }}>
-        <TouchableOpacity
+        <TouchableHighlight
           key={index}
           underlayColor={underlayColor}
           disabled={disableOnPress}
@@ -107,8 +103,8 @@ export class SliderBox extends Component {
             source={typeof item === 'string' ? {uri: item} : item}
             resizeMethod={resizeMethod || 'resize'}
             resizeMode={resizeMode || 'cover'}
-            onLoad={() => {}}
-            onLoadStart={() => {}}
+            //onLoad={() => {}}
+            //onLoadStart={() => {}}
             onLoadEnd={() => {
               let t = this.state.loading;
               t[index] = true;
@@ -116,9 +112,9 @@ export class SliderBox extends Component {
             }}
             {...this.props}
           />
-        </TouchableOpacity>
+        </TouchableHighlight>
         {!this.state.loading[index] && (
-          <this.Loader
+          <LoaderComponent
             index={index}
             size="large"
             color={imageLoadingColor}
@@ -174,13 +170,14 @@ export class SliderBox extends Component {
       parentWidth,
       loopClonesPerSide,
       autoplayDelay,
+      useScrollView
     } = this.props;
     return (
       <View>
         <Carousel
           autoplayDelay={autoplayDelay}
           layout={'default'}
-          useScrollView
+          useScrollView={useScrollView}
           data={images}
           ref={(c) => (this._ref = c)}
           loop={circleLoop || false}
@@ -189,7 +186,7 @@ export class SliderBox extends Component {
           itemWidth={parentWidth || width}
           sliderWidth={parentWidth || width}
           loopClonesPerSide={loopClonesPerSide || 5}
-          renderItem={(item) => this._renderItem(item)}
+          renderItem={this._renderItem}
           onSnapToItem={(index) => this.onSnap(index)}
           {...this.props}
         />
@@ -206,4 +203,5 @@ const colors = {
 
 SliderBox.defaultProps = {
   ImageComponent: Image,
+  LoaderComponent: ActivityIndicator
 };
