@@ -1,3 +1,2 @@
-import { SliderBox } from "./dist/SliderBox";
+export * from "./dist";
 
-export { SliderBox };
