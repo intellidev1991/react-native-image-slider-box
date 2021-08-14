@@ -19,7 +19,7 @@
     "@babel/core": "7.15.0",
     "@babel/runtime": "7.15.3",
     "@react-native-community/eslint-config": "^0.0.5",
-    "babel-jest": "^24.9.0",
+    "babel-jest": "24.9.0",
     "eslint": "7.32.0",
     "jest": "24.9.0",
     "metro-react-native-babel-preset": "0.66.2",
