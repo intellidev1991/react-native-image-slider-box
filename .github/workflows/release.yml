@@ -10,10 +10,14 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.release.target_commitish }}
+      # install Node.js
       - uses: actions/setup-node@v2
         with:
           node-version: "12.x"
+      - run: yarn install
       - run: npm ci
       - run: npx semantic-release
         env:
