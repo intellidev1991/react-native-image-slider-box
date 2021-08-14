@@ -1,0 +1,18 @@
+#https://github.com/marketplace/actions/automated-releases-for-npm-packages
+
+on: [push, pull_request]
+name: Build, Test and maybe Publish
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && ( github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' )
+    steps:
+    - uses: actions/checkout@v2
+    - name: Publish
+      uses: mikeal/merge-release@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
