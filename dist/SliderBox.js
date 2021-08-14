@@ -10,12 +10,12 @@ import {
 import Carousel, {Pagination} from 'react-native-snap-carousel'; //Thank From distributer(s) of this lib
 import styles from './SliderBox.style';
 
-// -------------------Props---------------------
+// -------------------Props--------------------
 // images
 // onCurrentImagePressed
 // sliderBoxHeight
 // parentWidth
-// dotColor
+// dotColor 
 // inactiveDotColor
 // dotStyle
 // paginationBoxVerticalPadding
