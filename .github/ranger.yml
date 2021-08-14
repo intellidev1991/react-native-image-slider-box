@@ -1,0 +1,7 @@
+# in .github/ranger.yml
+labels:
+  # Make all PRs labeled docs get automatically merged
+  'approved (squash)': 
+    action: merge
+  # or else just set merge directly without nesting
+  docs: merge
