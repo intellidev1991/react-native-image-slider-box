@@ -4,7 +4,7 @@ import {StyleSheet, SafeAreaView, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
 
 import {SliderBox} from './components/SliderBox'; // for develop time, first add:>>    yarn add react-native-snap-carousel
-//import {SliderBox} from 'react-native-image-slider-box';
+import {SliderBox} from 'react-native-image-slider-box';
 
 export default class App extends Component {
   constructor(props) {

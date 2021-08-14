@@ -3,7 +3,11 @@
 [![npm](https://img.shields.io/npm/v/react-native-image-slider-box.svg)](https://www.npmjs.com/package/react-native-image-slider-box)  ![npm](https://img.shields.io/npm/dt/react-native-image-slider-box.svg)
 
 
-> `Announce`: New version published.
+> `Announce`: All Pull-Requests have been applied. 
+>> CI/CD has been integrated to update the package automatically.
+
+[How to send a pull-request for this lib??? > Please Read this section before send a pull request
+](#how-to-send-a-pull-request)
 
 ---
 
@@ -53,8 +57,8 @@ Well-done.
 | ImageComponentStyle          | object                                | {} style object for ImageComponent   |
   | imageLoadingColor            | string                                | default is `#E91E63` , image loading indicator color       |
 | ImageLoader            | React component, default as `ActivityIndicator`                                | default value is React-native ActivityIndicator.
-       |
 | firstItem            | number                                | default is 0 , index of image to display when slider box loads       |
+| LoaderComponent            | component                                | default is ActivityIndicator , you can pass any component to show as Loader       |
 
 ### 1- add below import in your code :
 
@@ -292,12 +296,17 @@ const styles = StyleSheet.create({
 });
 ```
 
-# Contribute
+# Contribute And Update the Library
 
-Note: Please Use `example` folder to run sample. The sample used `components/SliderBox.js` file to run. Please after editing this file copy changes to root `dist/` folder too. The `npm` used `dist/` folder. Thanks guys.
+Please Edit and use `dist/SliderBox.js` file as src component file.
+## How to send a pull-request
+To send a pull-request please follow these rules for naming the commit message. Based on the commit messages, increment the version from the lastest release.
 
-### License MIT
+- If the string "`BREAKING CHANGE`" is found anywhere in any of the commit messages or descriptions the major version will be incremented.
+- If a commit message begins with the string "`feat`" then the minor version will be increased. b"feat: new API" and "feature: new API".
+- All other changes will increment the `patch version`.
 
+### ! `Important: Please update the README.MD file corresponding with your added features.`
 ## Please subscribe and contribute with me to develop this lib
 
 ---
@@ -309,3 +318,6 @@ This library use `react-native-snap-carousel` and make easier way to create imag
 See original Library [https://github.com/archriss/react-native-snap-carousel](https://github.com/archriss/react-native-snap-carousel)
 
 we dont edit or modify original library, we just use it with some additional style. (BSD 3 License)
+
+---
+### License MIT
