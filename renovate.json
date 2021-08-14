@@ -2,9 +2,20 @@
   "extends": [
     "config:base"
   ],
-  "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": true
-  },
-  "automerge": true
+  "packageRules": [
+    {
+      "updateTypes": [
+        "major",
+        "minor",
+        "patch"
+      ],
+      "automerge": true
+    }
+  ],
+  "timezone": "America/Toronto",
+  "schedule": [
+    "after 10pm every weekday",
+    "before 5am every weekday",
+    "every weekend"
+  ]
 }
