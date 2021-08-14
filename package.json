@@ -1,6 +1,6 @@
 {
   "name": "react-native-image-slider-box",
-  "version": "1.0.15-development",
+  "version": "1.0.15",
   "description": "A simple and fully customizable React Native component that implements an Image Slider UI.",
   "main": "index.js",
   "scripts": {
@@ -34,10 +34,9 @@
   },
   "homepage": "https://github.com/intellidev1991/react-native-image-slider-box#readme",
   "devDependencies": {
-    "metro-react-native-babel-preset": "*",
-    "semantic-release": "^17.4.4"
+    "metro-react-native-babel-preset": "latest"
   },
   "dependencies": {
-    "react-native-snap-carousel": "*"
+    "react-native-snap-carousel": "latest"
   }
 }
