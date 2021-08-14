@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "16.14.0",
     "react-native": "0.64.2",
-    "react-native-fast-image": "^8.0.0",
+    "react-native-fast-image": "8.3.7",
     "react-native-image-slider-box": "1.0.8"
   },
   "devDependencies": {
