@@ -4,7 +4,6 @@
   "description": "A simple and fully customizable React Native component that implements an Image Slider UI.",
   "main": "index.js",
   "scripts": {
-    "preinstall": "npm config set package-lock false"
   },
   "repository": {
     "type": "git",
