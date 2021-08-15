@@ -1,7 +1,30 @@
-# in .github/ranger.yml
+# Configuration for the repo ranger bot
+# See docs: https://www.notion.so/Documentation-8d7627bb1f3c42b7b1820e8d6f157a57#9879d1374fab4d1f9c607c230fd5123d
+default:
+  close:
+    # Default time to wait before closing the label. Can either be a number in milliseconds
+    # or a string specified by the `ms` package (https://www.npmjs.com/package/ms)
+    delay: "30 days"
+
+    # Default comment to post when an issue is first marked with a closing label
+    comment: "⚠️ This issue has been marked $LABEL and will be closed in $DELAY."
+
 labels:
-  # Make all PRs labeled docs get automatically merged
-  'approved (squash)': 
-    action: merge
-  # or else just set merge directly without nesting
-  docs: merge
+  duplicate: close
+  wontfix: close
+  "squash when passing": merge
+  "rebase when passing": merge
+  "merge when passing": merge
+  stale:
+    action: close
+    delay: 30 days
+    comment: "⚠️ This issue has been marked stale and will automatically be closed in $DELAY."
+  "new contributor":
+    action: comment
+    delay: 5s
+    message: "Thanks for making your first contribution! :slightly_smiling_face:"
+  duplicate:
+    action: close
+    delay: 15s
+    comment: "Duplicate issue created! Closing in $DELAY . . ."
+    
