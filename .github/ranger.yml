@@ -1,7 +1,6 @@
 # Configuration for the repo ranger bot
 # See docs: https://www.notion.so/Documentation-8d7627bb1f3c42b7b1820e8d6f157a57#9879d1374fab4d1f9c607c230fd5123d
 labels:
-  duplicate: close
   wontfix: close
   "squash when passing": merge
   "rebase when passing": merge
