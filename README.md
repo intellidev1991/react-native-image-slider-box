@@ -3,8 +3,7 @@
 [![npm](https://img.shields.io/npm/v/react-native-image-slider-box.svg)](https://www.npmjs.com/package/react-native-image-slider-box)  ![npm](https://img.shields.io/npm/dt/react-native-image-slider-box.svg)
 
 
-> `Announce`: All Pull-Requests have been applied. 
->> CI/CD has been integrated to update the package automatically.
+> I need someone to help me maintain the project. Feel free to send me an email.
 
 [How to send a pull-request for this lib??? > Please Read this section before send a pull request
 ](#how-to-send-a-pull-request)
