@@ -58,6 +58,7 @@ Well-done.
 | ImageLoader            | React component, default as `ActivityIndicator`                                | default value is React-native ActivityIndicator.
 | firstItem            | number                                | default is 0 , index of image to display when slider box loads       |
 | LoaderComponent            | component                                | default is ActivityIndicator , you can pass any component to show as Loader       |
+| autoplayInterval            | number                                | default is 3000ms       |
 
 ### 1- add below import in your code :
 

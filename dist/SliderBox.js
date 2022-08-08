@@ -30,6 +30,7 @@ import styles from "./SliderBox.style";
 // imageLoadingColor = "#E91E63"
 // firstItem = 0
 // activeOpacity
+// autoplayInterval = 3000
 
 const width = Dimensions.get("window").width;
 
@@ -173,11 +174,14 @@ export class SliderBox extends Component {
       loopClonesPerSide,
       autoplayDelay,
       useScrollView,
+      autoplayInterval,
     } = this.props;
+
     return (
       <View>
         <Carousel
           autoplayDelay={autoplayDelay}
+          autoplayInterval={autoplayInterval || 3000}
           layout={"default"}
           useScrollView={useScrollView}
           data={images}
