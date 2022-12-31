@@ -3,7 +3,11 @@
 [![npm](https://img.shields.io/npm/v/react-native-image-slider-box.svg)](https://www.npmjs.com/package/react-native-image-slider-box)  ![npm](https://img.shields.io/npm/dt/react-native-image-slider-box.svg)
 
 
-> I need someone to help me maintain the project. Feel free to send me an email.
+> If you would like to support me, please consider buying me a coffee
+
+ <a href="https://nowpayments.io/donation?api_key=J02J19H-CB0MDKG-JXN2Z3Z-CZVHVDY" target="_blank">
+  <img src="https://nowpayments.io/images/embeds/donation-button-black.svg" alt="Crypto donation button by NOWPayments">
+ </a>
 
 [How to send a pull-request for this lib??? > Please Read this section before send a pull request
 ](#how-to-send-a-pull-request)
