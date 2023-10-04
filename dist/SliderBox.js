@@ -18,6 +18,7 @@ import styles from "./SliderBox.style";
 // dotColor
 // inactiveDotColor
 // dotStyle
+// inactiveDotStyle
 // paginationBoxVerticalPadding
 // circleLoop
 // autoplay
@@ -136,6 +137,7 @@ export class SliderBox extends Component {
     const {
       images,
       dotStyle,
+      inactiveDotStyle,
       dotColor,
       inactiveDotColor,
       paginationBoxStyle,
@@ -149,6 +151,7 @@ export class SliderBox extends Component {
         dotStyle={dotStyle || styles.dotStyle}
         dotColor={dotColor || colors.dotColors}
         inactiveDotColor={inactiveDotColor || colors.white}
+        inactiveDotStyle={inactiveDotStyle || styles.dotStyle}
         inactiveDotScale={0.8}
         carouselRef={this._ref}
         inactiveDotOpacity={0.8}
